@@ -6,6 +6,7 @@
 
     <services>
         <service id="whisnet_irc_bot.bot_command_hello_listener" class="kosssi\PreBundle\EventListener\HelloListener">
+            <argument type="service" id="whisnet_irc_bot.connection"/>
             <tag name="whisnet_irc_bot.bot_command" command="hello" help="Say hello to user" arguments="(username)"/>
             <tag name="kernel.event_listener" event="whisnet_irc_bot.bot_command_hello" method="onCommand"/>
         </service>
